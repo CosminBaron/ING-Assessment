@@ -1,5 +1,6 @@
 package ing.assessment.service.impl;
 
+import ing.assessment.db.order.OrderProduct;
 import ing.assessment.db.product.Product;
 import ing.assessment.db.repository.ProductRepository;
 import ing.assessment.service.ProductService;
@@ -25,5 +26,10 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getProductsById(Integer id) {
         List<Product> productList = productRepository.findByProductCk_Id(id);
         return productList;
+    }
+
+    @Override
+    public List<OrderProduct> checkProductStock(List<OrderProduct> orderProducts) {
+        return null;
     }
 }

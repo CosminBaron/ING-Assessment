@@ -25,4 +25,8 @@ public class Order {
     private Double orderCost;
     private Integer deliveryCost = 30; // Default cost of the order
     private Integer deliveryTime = 2;  // Default delivery time for the order
+
+    public List<OrderProduct> getOrderProducts() {
+        return orderProducts;
+    }
 }
