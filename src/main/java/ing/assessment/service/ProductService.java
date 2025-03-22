@@ -7,6 +7,4 @@ import java.util.List;
 public interface ProductService {
     List<Product> getAllProducts();
     List<Product> getProductsById(Integer id);
-
-    List<OrderProduct> checkProductStock (List<OrderProduct> orderProducts);
 }

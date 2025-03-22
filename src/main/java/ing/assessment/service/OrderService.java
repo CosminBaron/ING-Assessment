@@ -1,10 +1,11 @@
 package ing.assessment.service;
 
 import ing.assessment.db.order.Order;
+import ing.assessment.dto.OrderDto;
 
 import java.util.Optional;
 
 public interface OrderService {
-    void placeOrder(Order order);
-    Optional<Order> getOrderById(Integer id);
+    Order placeOrder(OrderDto orderDto);
+    Order getOrderById(Integer id);
 }

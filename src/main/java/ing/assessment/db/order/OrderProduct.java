@@ -14,6 +14,11 @@ public class OrderProduct {
     private Integer productId;
     private Integer quantity;
 
+    public OrderProduct(Integer productId, Integer quantity) {
+        this.productId = productId;
+        this.quantity = quantity;
+    }
+
     public Integer getProductId() {
         return productId;
     }

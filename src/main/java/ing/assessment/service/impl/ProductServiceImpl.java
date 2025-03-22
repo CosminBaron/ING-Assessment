@@ -5,7 +5,10 @@ import ing.assessment.db.product.Product;
 import ing.assessment.db.repository.ProductRepository;
 import ing.assessment.service.ProductService;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -26,10 +29,5 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getProductsById(Integer id) {
         List<Product> productList = productRepository.findByProductCk_Id(id);
         return productList;
-    }
-
-    @Override
-    public List<OrderProduct> checkProductStock(List<OrderProduct> orderProducts) {
-        return null;
     }
 }

@@ -29,4 +29,28 @@ public class Order {
     public List<OrderProduct> getOrderProducts() {
         return orderProducts;
     }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public void setOrderProducts(List<OrderProduct> orderProducts) {
+        this.orderProducts = orderProducts;
+    }
+
+    public void setOrderCost(Double orderCost) {
+        this.orderCost = orderCost;
+    }
+
+    public void setDeliveryCost(Integer deliveryCost) {
+        this.deliveryCost = deliveryCost;
+    }
+
+    public void setDeliveryTime(Integer deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
 }

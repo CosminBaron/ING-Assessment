@@ -13,4 +13,20 @@ import lombok.NoArgsConstructor;
 public class ProductCK {
     private Integer id;
     private Location location;
+
+
+    public ProductCK() {
+    }
+
+    public ProductCK(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+    public Location getLocation() {
+        return location;
+    }
+
 }
