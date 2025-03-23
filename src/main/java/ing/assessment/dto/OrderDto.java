@@ -10,4 +10,8 @@ public class OrderDto {
     public List<OrderProduct> getOrderProducts() {
         return orderProducts;
     }
+
+    public void setOrderProducts(List<OrderProduct> orderProducts) {
+        this.orderProducts = orderProducts;
+    }
 }

@@ -7,17 +7,17 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+//@NoArgsConstructor
+//@AllArgsConstructor
 public class Product {
-
     @EmbeddedId
     private ProductCK productCk;
 
     private String name;
     private Double price;
     private Integer quantity;
-
+    public Product() {
+    }
     public Product(ProductCK productCk, String name, Double price, Integer quantity) {
         this.productCk = productCk;
         this.name = name;
@@ -40,4 +40,11 @@ public class Product {
     public Integer getQuantity() {
         return quantity;
     }
+
+    public void setProductCk(ProductCK productCk) {this.productCk = productCk;}
+
+    public void setPrice(Double price) {this.price = price;}
+
+    public void setQuantity(Integer quantity) {this.quantity = quantity;}
+
 }

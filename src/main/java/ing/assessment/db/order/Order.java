@@ -14,7 +14,6 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name = "orders")
 public class Order {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -26,9 +25,13 @@ public class Order {
     private Integer deliveryCost = 30; // Default cost of the order
     private Integer deliveryTime = 2;  // Default delivery time for the order
 
+    public Integer getId() {return id;}
+
     public List<OrderProduct> getOrderProducts() {
         return orderProducts;
     }
+
+    public Double getOrderCost() {return orderCost;}
 
     public void setId(Integer id) {
         this.id = id;
