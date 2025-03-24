@@ -1,16 +1,20 @@
 package ing.assessment.db.order;
 
+import ing.assessment.model.Location;
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import jakarta.annotation.Nonnull;
+import lombok.NonNull;
+
 
 @Data
-//@NoArgsConstructor
+@NoArgsConstructor
 //@AllArgsConstructor
 @Embeddable
 public class OrderProduct {
-
     private Integer productId;
     private Integer quantity;
 
@@ -26,4 +30,5 @@ public class OrderProduct {
     public Integer getQuantity() {
         return quantity;
     }
+
 }

@@ -3,7 +3,7 @@ package ing.assessment.validation;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ValidatorException extends RuntimeException{
+public sealed class ValidatorException extends RuntimeException permits OutOfStockError, InvalidOrderError {
 
     private Set<String> errorsCode = new HashSet<>();
 

@@ -17,7 +17,6 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private Date timestamp;
     @ElementCollection
     private List<OrderProduct> orderProducts;
@@ -26,6 +25,10 @@ public class Order {
     private Integer deliveryTime = 2;  // Default delivery time for the order
 
     public Integer getId() {return id;}
+
+    public Date getTimestamp() {
+        return timestamp;
+    }
 
     public List<OrderProduct> getOrderProducts() {
         return orderProducts;

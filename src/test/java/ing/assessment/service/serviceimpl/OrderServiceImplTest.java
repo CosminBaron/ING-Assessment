@@ -45,13 +45,17 @@ public class OrderServiceImplTest {
     @Test
     void testComputeCost_WithValidOrder() {
         List<OrderProduct> orderProducts = List.of(new OrderProduct(1, 2));
-        Product product = new Product(new ProductCK(1, Location.MUNICH), "Shoes", 100.0, 50);
+        Product product = new Product(new ProductCK(1, Location.MUNICH), "Shoes", 400.0, 50);
 
-        when(orderService.findProductsById(orderProducts)).thenReturn(List.of(product));
+        when(productRepository.findAvailableProduct(1, 2)).thenReturn(List.of(product));
+
+        doNothing().when(productRepository).updateProductStock(
+                eq(1), eq(Location.MUNICH), eq(2)
+        );
 
         double totalCost = orderService.computeCost(orderProducts);
 
-        assertEquals(200.0, totalCost);
+        assertEquals(800.0, totalCost);
     }
 
     @Test
@@ -59,7 +63,11 @@ public class OrderServiceImplTest {
         List<OrderProduct> orderProducts = List.of(new OrderProduct(1, 11));
         Product product = new Product(new ProductCK(1, Location.MUNICH), "Shoes", 100.0, 50);
 
-        when(orderService.findProductsById(orderProducts)).thenReturn(List.of(product));
+        when(productRepository.findAvailableProduct(1, 11)).thenReturn(List.of(product));
+
+        doNothing().when(productRepository).updateProductStock(
+                eq(1), eq(Location.MUNICH), eq(2)
+        );
 
         double totalCost = orderService.computeCost(orderProducts);
 
